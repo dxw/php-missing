@@ -16,5 +16,5 @@ function get_r($x) {
 
 function parse_strptime($a) {
   date_default_timezone_set('UTC');
-  return mktime($a['tm_hour'], $a['tm_min'], $a['tm_sec'], $a['tm_mon'], $a['tm_mday'], $a['tm_year'] + 1900);
+  return mktime($a['tm_hour'], $a['tm_min'], $a['tm_sec'], $a['tm_mon']+1, $a['tm_mday'], $a['tm_year'] + 1900);
 }
