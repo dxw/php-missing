@@ -1,0 +1,16 @@
+{
+    "name": "php-missing",
+    "description": "The stdlib you wish PHP had",
+    "homepage": "https://github.com/dxw/php-missing",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tom Adams",
+            "email": "tom@dxw.com",
+            "homepage": "http://dxw.com"
+        }
+    ],
+    "autoload": {
+        "files": ["src/Missing.php"]
+    }
+}
