@@ -22,4 +22,14 @@ class DateTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals('2011-12-13', strftime('%Y-%m-%d', Missing\Date\parse('2011-12-13')));
     $this->assertEquals(mktime(0, 0, 0, 12, 13, 2011), Missing\Date\parse('2011-12-13'));
   }
+
+  function testParseFailureA() {
+    $this->setExpectedException('InvalidArgumentException');
+    Missing\Date\parse('2012-06-006 19:00');
+  }
+
+  function testParseFailureB() {
+    $this->setExpectedException('InvalidArgumentException');
+    Missing\Date\parse("this doesn't even look like a date!");
+  }
 }

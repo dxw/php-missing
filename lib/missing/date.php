@@ -20,4 +20,6 @@ function parse($str) {
       return parse_strptime($time);
     }
   }
+
+  throw new \InvalidArgumentException('Unparseable date format');
 }
