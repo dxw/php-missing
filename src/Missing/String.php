@@ -9,3 +9,11 @@ function startswith($haystack, $needle) {
 function endswith($haystack, $needle) {
   return substr($haystack, -strlen($needle)) === $needle;
 }
+
+function get_output($callback) {
+  ob_start();
+  call_user_func($callback);
+  $s = ob_get_contents();
+  ob_end_clean();
+  return $s;
+}

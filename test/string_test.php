@@ -12,4 +12,10 @@ class StringTest extends PHPUnit_Framework_TestCase {
     $this->assertFalse(Missing\String\endswith('abc', 'b'));
     $this->assertFalse(Missing\String\endswith('c', 'abc'));
   }
+
+  function testGetOutput() {
+    $this->assertEquals('a simple test', Missing\String\get_output(function () {
+      echo 'a simple test';
+    }));
+  }
 }
