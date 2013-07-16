@@ -1,5 +1,5 @@
 {
-    "name": "php-missing",
+    "name": "dxw/php-missing",
     "description": "The stdlib you wish PHP had",
     "homepage": "https://github.com/dxw/php-missing",
     "type": "library",
