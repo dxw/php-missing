@@ -11,6 +11,8 @@
         }
     ],
     "autoload": {
-        "files": ["src/Missing.php"]
+        "psr-0": {
+            "Missing": "src/"
+        }
     }
 }
