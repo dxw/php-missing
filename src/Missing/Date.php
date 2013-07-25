@@ -18,7 +18,7 @@ class Date {
     foreach ($formats as $format) {
       $time = strptime($str, $format);
       if ($time !== false) {
-        return parse_strptime($time);
+        return self::parse_strptime($time);
       }
     }
 
