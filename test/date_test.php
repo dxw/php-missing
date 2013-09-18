@@ -16,20 +16,30 @@ class DateTest extends PHPUnit_Framework_TestCase {
   }
 
   function testParse() {
-    $this->assertEquals(1339009200, Missing\Date::parse('2012-06-06T19:00'));
-    $this->assertEquals(1339009200, Missing\Date::parse('2012-06-06 19:00'));
+    list($err, $date) = Missing\Date::parse('2012-06-06T19:00');
+    $this->assertNull($err);
+    $this->assertEquals(1339009200, $date);
 
-    $this->assertEquals('2011-12-13', strftime('%Y-%m-%d', Missing\Date::parse('2011-12-13')));
-    $this->assertEquals(mktime(0, 0, 0, 12, 13, 2011), Missing\Date::parse('2011-12-13'));
+    list($err, $date) = Missing\Date::parse('2012-06-06 19:00');
+    $this->assertNull($err);
+    $this->assertEquals(1339009200, $date);
+
+    list($err, $date) = Missing\Date::parse('2011-12-13');
+    $this->assertNull($err);
+    $this->assertEquals('2011-12-13', strftime('%Y-%m-%d', $date));
+
+    list($err, $date) = Missing\Date::parse('2011-12-13');
+    $this->assertNull($err);
+    $this->assertEquals(mktime(0, 0, 0, 12, 13, 2011), $date);
   }
 
   function testParseFailureA() {
-    $this->setExpectedException('InvalidArgumentException');
-    Missing\Date::parse('2012-06-006 19:00');
+    list($err, $date) = Missing\Date::parse('2012-06-006 19:00');
+    $this->assertTrue($err);
   }
 
   function testParseFailureB() {
-    $this->setExpectedException('InvalidArgumentException');
-    Missing\Date::parse("this doesn't even look like a date!");
+    list($err, $date) = Missing\Date::parse("this doesn't even look like a date!");
+    $this->assertTrue($err);
   }
 }

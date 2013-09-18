@@ -18,10 +18,10 @@ class Date {
     foreach ($formats as $format) {
       $time = strptime($str, $format);
       if ($time !== false) {
-        return self::parse_strptime($time);
+        return [null, self::parse_strptime($time)];
       }
     }
 
-    throw new \InvalidArgumentException('Unparseable date format');
+    return [true, null];
   }
 }
