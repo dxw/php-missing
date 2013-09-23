@@ -18,10 +18,10 @@ class Date {
     foreach ($formats as $format) {
       $time = strptime($str, $format);
       if ($time !== false) {
-        return [null, self::parse_strptime($time)];
+        return [self::parse_strptime($time), null];
       }
     }
 
-    return [true, null];
+    return [null, true];
   }
 }
