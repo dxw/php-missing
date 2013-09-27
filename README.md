@@ -1,4 +1,4 @@
-# php-missing
+# php-missing [![Build Status](https://secure.travis-ci.org/dxw/php-missing.png)](http://travis-ci.org/dxw/php-missing)
 
 PHP's standard library contains a lot of stuff, but it's missing a lot of stuff. All these functions are basic things that I've had to implement over and over again.
 
