@@ -3,6 +3,8 @@
     "description": "The stdlib you wish PHP had",
     "homepage": "https://github.com/dxw/php-missing",
     "type": "library",
+    "version": "0.1.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Tom Adams",
