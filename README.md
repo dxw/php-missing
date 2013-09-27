@@ -2,6 +2,22 @@
 
 PHP's standard library contains a lot of stuff, but it's missing a lot of stuff. All these functions are basic things that I've had to implement over and over again.
 
+## Installation
+
+Install [composer](http://getcomposer.org/).
+
+Run the following in the root of your project:
+
+    composer require dxw/php-missing dev-master
+
+Or, create a composer.json file with the following contents and run "composer install":
+
+    {
+      "require": {
+        "dxw/php-missing": "dev-master"
+      }
+    }
+
 ## API
 
 * [\Missing\Arr::flatten](#arr_flatten)
