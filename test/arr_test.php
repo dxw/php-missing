@@ -21,4 +21,14 @@ class ArrTest extends PHPUnit_Framework_TestCase {
       )
     );
   }
+
+  function testSortByString() {
+    $this->assertEquals(
+      array('a333', 'b22', 'c1', 'd55555'),
+      Missing\Arr::sort_by(
+        array('d55555', 'b22', 'a333', 'c1'),
+        function ($a) { return $a; }
+      )
+    );
+  }
 }
