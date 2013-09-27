@@ -6,11 +6,11 @@ PHP's standard library contains a lot of stuff, but it's missing a lot of stuff.
 
 * [\Missing\Arr::flatten](#arr_flatten)
 * [\Missing\Arr::sort_by](#arr_sort_by)
-* [\Missing\Date::parse_strptime](#arr_parse_strptime)
-* [\Missing\Date::parse](#arr_parse)
-* [\Missing\String::starts_with](#arr_starts_with)
-* [\Missing\String::ends_with](#arr_ends_with)
-* [\Missing\String::get_output](#arr_get_output)
+* [\Missing\Date::parse_strptime](#date_parse_strptime)
+* [\Missing\Date::parse](#date_parse)
+* [\Missing\String::starts_with](#string_starts_with)
+* [\Missing\String::ends_with](#string_ends_with)
+* [\Missing\String::get_output](#string_get_output)
 
 ### Array
 
