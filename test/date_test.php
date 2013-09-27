@@ -52,4 +52,12 @@ class DateTest extends PHPUnit_Framework_TestCase {
     list($date, $err) = Missing\Date::parse("this doesn't even look like a date!");
     $this->assertTrue($err);
   }
+
+  function testResettingTimeZone() {
+    date_default_timezone_set('America/New_York');
+    Missing\Date::parse('2011-12-13');
+    $this->assertEquals(date_default_timezone_get(), 'America/New_York');
+    // Reset so we don't break other tests
+    date_default_timezone_set('UTC');
+  }
 }

@@ -4,8 +4,12 @@ namespace Missing;
 
 class Date {
   static function parse_strptime($a) {
+    // Reset the timezone after using mktime
+    $tz = date_default_timezone_get();
     date_default_timezone_set('UTC');
-    return mktime($a['tm_hour'], $a['tm_min'], $a['tm_sec'], $a['tm_mon']+1, $a['tm_mday'], $a['tm_year'] + 1900);
+    $r = mktime($a['tm_hour'], $a['tm_min'], $a['tm_sec'], $a['tm_mon']+1, $a['tm_mday'], $a['tm_year'] + 1900);
+    date_default_timezone_set($tz);
+    return $r;
   }
 
   static function parse($str) {
