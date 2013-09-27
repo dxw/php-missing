@@ -16,6 +16,7 @@ class DateTest extends PHPUnit_Framework_TestCase {
   }
 
   function testParse() {
+    // Without seconds
     list($date, $err) = Missing\Date::parse('2012-06-06T19:00');
     $this->assertNull($err);
     $this->assertEquals(1339009200, $date);
@@ -23,6 +24,15 @@ class DateTest extends PHPUnit_Framework_TestCase {
     list($date, $err) = Missing\Date::parse('2012-06-06 19:00');
     $this->assertNull($err);
     $this->assertEquals(1339009200, $date);
+
+    // With seconds
+    list($date, $err) = Missing\Date::parse('2012-06-06T19:00:13');
+    $this->assertNull($err);
+    $this->assertEquals(1339009213, $date);
+
+    list($date, $err) = Missing\Date::parse('2012-06-06 19:00:13');
+    $this->assertNull($err);
+    $this->assertEquals(1339009213, $date);
 
     list($date, $err) = Missing\Date::parse('2011-12-13');
     $this->assertNull($err);

@@ -10,6 +10,8 @@ class Date {
 
   static function parse($str) {
     $formats = array(
+      '%Y-%m-%dT%H:%M:%S',
+      '%Y-%m-%d %H:%M:%S',
       '%Y-%m-%dT%H:%M',
       '%Y-%m-%d %H:%M',
       '%Y-%m-%d',
