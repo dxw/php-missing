@@ -8,8 +8,8 @@ PHP's standard library contains a lot of stuff, but it's missing a lot of stuff.
 * [\Missing\Arr::sort_by](#arr_sort_by)
 * [\Missing\Date::parse_strptime](#arr_parse_strptime)
 * [\Missing\Date::parse](#arr_parse)
-* [\Missing\String::startswith](#arr_startswith)
-* [\Missing\String::endswith](#arr_endswith)
+* [\Missing\String::starts_with](#arr_starts_with)
+* [\Missing\String::ends_with](#arr_ends_with)
 * [\Missing\String::get_output](#arr_get_output)
 
 ### Array
@@ -55,13 +55,13 @@ Parses several common/standard time formats, returns UNIX timestamp and error (t
 
 ### String
 
-<a name="string_startswith"></a>
-#### $bool = \Missing\String::startswith($haystack, $needle)
+<a name="string_starts_with"></a>
+#### $bool = \Missing\String::starts_with($haystack, $needle)
 
 Returns true if string $haystack starts with $needle (uses substr() - regexes not supported).
 
-<a name="string_endswith"></a>
-#### $bool = \Missing\String::endswith($haystack, $needle)
+<a name="string_ends_with"></a>
+#### $bool = \Missing\String::ends_with($haystack, $needle)
 
 Returns true if string $haystack ends with $needle (uses substr() - regexes not supported).
 

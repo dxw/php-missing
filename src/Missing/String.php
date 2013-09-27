@@ -3,11 +3,11 @@
 namespace Missing;
 
 class String {
-  static function startswith($haystack, $needle) {
+  static function starts_with($haystack, $needle) {
     return substr($haystack, 0, strlen($needle)) === $needle;
   }
 
-  static function endswith($haystack, $needle) {
+  static function ends_with($haystack, $needle) {
     return substr($haystack, -strlen($needle)) === $needle;
   }
 
