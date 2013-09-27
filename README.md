@@ -52,7 +52,6 @@ Parses several common/standard time formats, returns UNIX timestamp and error (t
       $date = strftime('%e %B %Y', d);
     }
 
-
 ### String
 
 <a name="string_starts_with"></a>
@@ -70,10 +69,7 @@ Returns true if string $haystack ends with $needle (uses substr() - regexes not 
 
 Executes $callback, returns what it prints as a string.
 
-## Credits
-
-TODO
 
 ## Licence
 
-TODO
+MIT - see COPYING.md
