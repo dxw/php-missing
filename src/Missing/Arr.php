@@ -12,7 +12,7 @@ class Arr {
   static function sort_by($array, $callback) {
     if (!is_callable($callback) || !is_array($array)) {
       trigger_error('Arguments are in the wrong order', E_USER_ERROR);
-    }
+    } //@codeCoverageIgnore
 
     usort($array, function ($a, $b) use ($callback) {
       $a = call_user_func($callback, $a);

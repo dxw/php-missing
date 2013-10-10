@@ -14,9 +14,9 @@ class ArrTest extends PHPUnit_Framework_TestCase {
 
   function testSortByInt() {
     $this->assertEquals(
-      array('a', 'ab', 'abc', 'abcd'),
+      array('a', 'a', 'ab', 'abc', 'abcd'),
       Missing\Arr::sort_by(
-        array('abcd', 'ab', 'a', 'abc'),
+        array('abcd', 'ab', 'a', 'abc', 'a'),
         function ($a) { return strlen($a); }
       )
     );
@@ -30,5 +30,12 @@ class ArrTest extends PHPUnit_Framework_TestCase {
         function ($a) { return $a; }
       )
     );
+  }
+
+  /**
+   * @expectedException PHPUnit_Framework_Error
+   */
+  function testSortByTriggersError() {
+    Missing\Arr::sort_by(function(){}, array());
   }
 }
