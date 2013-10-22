@@ -65,7 +65,7 @@ Parses several common/standard time formats, returns UNIX timestamp and error (t
     if ($err) {
       $date = 'Unknown date';
     } else {
-      $date = strftime('%e %B %Y', d);
+      $date = strftime('%e %B %Y', $d);
     }
 
 ### String
