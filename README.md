@@ -68,6 +68,14 @@ Parses several common/standard time formats, returns UNIX timestamp and error (t
       $date = strftime('%e %B %Y', $d);
     }
 
+The following date formats are parsed:
+
+* %Y-%m-%dT%H:%M:%S
+* %Y-%m-%d %H:%M:%S
+* %Y-%m-%dT%H:%M
+* %Y-%m-%d %H:%M
+* %Y-%m-%d
+
 ### String
 
 <a name="string_starts_with"></a>
