@@ -32,10 +32,8 @@ class ArrTest extends PHPUnit_Framework_TestCase {
     );
   }
 
-  /**
-   * @expectedException PHPUnit_Framework_Error
-   */
   function testSortByTriggersError() {
+    $this->setExpectedException('PHPUnit_Framework_Error');
     Missing\Arr::sort_by(function(){}, array());
   }
 }

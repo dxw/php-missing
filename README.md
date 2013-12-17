@@ -22,8 +22,8 @@ Or, create a composer.json file with the following contents and run "composer in
 
 * [\Missing\Arr::flatten](#arr_flatten)
 * [\Missing\Arr::sort_by](#arr_sort_by)
-* [\Missing\Date::parse_strptime](#date_parse_strptime)
 * [\Missing\Date::parse](#date_parse)
+* [\Missing\Int::ordinalize](#int_ordinalize)
 * [\Missing\String::starts_with](#string_starts_with)
 * [\Missing\String::ends_with](#string_ends_with)
 * [\Missing\String::get_output](#string_get_output)
@@ -46,16 +46,6 @@ Sorts $array by $callback($array_element).
 
 ### Date
 
-<a name="date_parse_strptime"></a>
-#### $timestamp = \Missing\Date::parse_strptime($array)
-
-Used by \Missing\Date::parse() to convert the output of strptime() into something useful.
-
-* Sets timezone to UTC
-* Passes tm_hour, tm_min, etc values from given array to mktime
-* Resets timezone
-* Returns a UNIX timestamp
-
 <a name="date_parse"></a>
 #### list($timestamp, $err) = \Missing\Date::parse($str)
 
@@ -75,6 +65,15 @@ The following date formats are parsed:
 * %Y-%m-%dT%H:%M
 * %Y-%m-%d %H:%M
 * %Y-%m-%d
+
+### Int
+
+<a name="int_ordinalize"></a>
+#### $string = \Missing\Int::ordinalize($number)
+
+Returns English ordinals for any given integer (i.e. 1 => "1st", 2 => "2nd").
+
+Copied directly from active_record's [Inflector#ordinalize](http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html#method-i-ordinalize) (also MIT licensed).
 
 ### String
 
@@ -97,3 +96,5 @@ Executes $callback, returns what it prints as a string.
 ## Licence
 
 MIT - see COPYING.md
+
+\Missing\Int\ordinal and \Missing\Int\ordinalize were ported from the Rails active_support module, also licensed under MIT.
