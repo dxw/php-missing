@@ -105,4 +105,4 @@ Executes $callback, returns what it prints as a string.
 
 MIT - see COPYING.md
 
-\Missing\Int\ordinal and \Missing\Int\ordinalize were ported from the Rails active_support module, also licensed under MIT.
+\Missing\Int::ordinal and \Missing\Int::ordinalize were ported from the Rails active_support module, also licensed under MIT.
