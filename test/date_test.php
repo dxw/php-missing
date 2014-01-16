@@ -60,4 +60,19 @@ class DateTest extends PHPUnit_Framework_TestCase {
     // Reset so we don't break other tests
     date_default_timezone_set('UTC');
   }
+
+  function testStrftime() {
+    $this->assertEquals(
+      \Missing\Date::strftime('2014-01-01 00:00', '%H:%M', 'unknown', 'Europe/London'),
+      '00:00'
+    );
+    $this->assertEquals(
+      \Missing\Date::strftime('2014-06-01 00:00', '%H:%M', 'unknown', 'Europe/London'),
+      '01:00'
+    );
+    $this->assertEquals(
+      \Missing\Date::strftime('cats', '%H:%M', 1234, 'Europe/London'),
+      1234
+    );
+  }
 }

@@ -23,6 +23,7 @@ Or, create a composer.json file with the following contents and run "composer in
 * [\Missing\Arr::flatten](#arr_flatten)
 * [\Missing\Arr::sort_by](#arr_sort_by)
 * [\Missing\Date::parse](#date_parse)
+* [\Missing\Date::strftime](#date_strftime)
 * [\Missing\Int::ordinalize](#int_ordinalize)
 * [\Missing\Reflection::call](#reflection_call)
 * [\Missing\String::starts_with](#string_starts_with)
@@ -66,6 +67,13 @@ The following date formats are parsed:
 * %Y-%m-%dT%H:%M
 * %Y-%m-%d %H:%M
 * %Y-%m-%d
+
+<a name="date_strftime"></a>
+#### $date = \Missing\Date::strftime($date_string, $format, $else, $tz)
+
+Parses $date_string using \Missing\Date::parse(), if it parses correctly, return the date formatted with $format in the timezone $tz, otherwise return $else.
+
+    <p>Date: <?php echo \Missing\Date::strftime($date, '%d/%m/%Y', 'unknown', 'Europe/London') ?></p>
 
 ### Int
 

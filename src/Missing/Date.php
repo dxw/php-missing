@@ -30,4 +30,20 @@ class Date {
 
     return [null, true];
   }
+
+  static function strftime($datetime, $format, $else, $tz) {
+    list($t, $err) = self::parse($datetime);
+    if ($err) {
+      return $else;
+    }
+
+    $old_tz = date_default_timezone_get();
+    date_default_timezone_set($tz);
+
+    $ret = strftime($format, $t);
+
+    date_default_timezone_set($old_tz);
+
+    return $ret;
+  }
 }
