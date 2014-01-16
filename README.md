@@ -24,6 +24,7 @@ Or, create a composer.json file with the following contents and run "composer in
 * [\Missing\Arr::sort_by](#arr_sort_by)
 * [\Missing\Date::parse](#date_parse)
 * [\Missing\Int::ordinalize](#int_ordinalize)
+* [\Missing\Reflection::call](#reflection_call)
 * [\Missing\String::starts_with](#string_starts_with)
 * [\Missing\String::ends_with](#string_ends_with)
 * [\Missing\String::get_output](#string_get_output)
@@ -74,6 +75,13 @@ The following date formats are parsed:
 Returns English ordinals for any given integer (i.e. 1 => "1st", 2 => "2nd").
 
 Copied directly from active_record's [Inflector#ordinalize](http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html#method-i-ordinalize) (also MIT licensed).
+
+### Reflection
+
+<a name="reflection_call"></a>
+#### $value = \Missing\Reflection::call($object, $methodName, $arguments)
+
+Calls private or protected method $methodName of $object with $arguments (an array) and returns what it returns.
 
 ### String
 
