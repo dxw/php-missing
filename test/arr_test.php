@@ -34,9 +34,9 @@ class ArrTest extends PHPUnit_Framework_TestCase {
 
   function testSortByArray() {
     $this->assertEquals(
-      array(array(1, 'b'), array(1, 'c'), array(2, 'a')),
+      array(array(2, 'b'), array(2, 'c'), array(19, 'a')),
       Missing\Arr::sort_by(
-        array(array(2, 'a'), array(1, 'c'), array(1, 'b')),
+        array(array(19, 'a'), array(2, 'c'), array(2, 'b')),
         function ($a) { return $a; }
       )
     );
