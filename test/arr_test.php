@@ -32,6 +32,16 @@ class ArrTest extends PHPUnit_Framework_TestCase {
     );
   }
 
+  function testSortByArray() {
+    $this->assertEquals(
+      array(array(1, 'b'), array(1, 'c'), array(2, 'a')),
+      Missing\Arr::sort_by(
+        array(array(2, 'a'), array(1, 'c'), array(1, 'b')),
+        function ($a) { return $a; }
+      )
+    );
+  }
+
   function testSortByTriggersError() {
     $this->setExpectedException('PHPUnit_Framework_Error');
     Missing\Arr::sort_by(function(){}, array());
