@@ -32,9 +32,14 @@ class Date {
   }
 
   static function strftime($datetime, $format, $else, $tz) {
-    list($t, $err) = self::parse($datetime);
-    if ($err) {
-      return $else;
+    // Allow timestamps
+    if (is_int($datetime)) {
+      $t = $datetime;
+    } else {
+      list($t, $err) = self::parse($datetime);
+      if ($err) {
+        return $else;
+      }
     }
 
     $old_tz = date_default_timezone_get();

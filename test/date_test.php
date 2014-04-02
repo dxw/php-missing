@@ -75,4 +75,22 @@ class DateTest extends PHPUnit_Framework_TestCase {
       1234
     );
   }
+
+  function testTimestamp() {
+    // It doesn't make sense to parse a timestamp
+    list($date, $err) = Missing\Date::parse(1339009200);
+    $this->assertTrue($err);
+    $this->assertNull($date);
+
+    // But it does make sense to strftime() a timestamp
+    $this->assertEquals(
+      '2012-06-06T20:00',
+      Missing\Date::strftime(
+        1339009200,
+        '%Y-%m-%dT%H:%M',
+        'unknown',
+        'Europe/London'
+      )
+    );
+  }
 }
