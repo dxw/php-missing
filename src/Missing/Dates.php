@@ -2,7 +2,7 @@
 
 namespace Missing;
 
-class Date {
+class Dates {
   static function parse_strptime($a) {
     // Reset the timezone after using mktime
     $tz = date_default_timezone_get();

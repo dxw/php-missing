@@ -2,7 +2,7 @@
 
 namespace Missing;
 
-class Int {
+class Ints {
   // Ported directly from active_support's Inflector#ordinal
   // https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb#L289
   static function ordinal($number) {

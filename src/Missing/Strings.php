@@ -2,7 +2,7 @@
 
 namespace Missing;
 
-class String {
+class Strings {
   static function starts_with($haystack, $needle) {
     return substr($haystack, 0, strlen($needle)) === $needle;
   }
