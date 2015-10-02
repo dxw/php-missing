@@ -2,7 +2,7 @@
 
 class DatesTest extends PHPUnit_Framework_TestCase {
   function testParseStrptime() {
-    $this->assertEquals(1339009200, Missing\Dates::parse_strptime(array(
+    $this->assertEquals(1339009200, Missing\Dates::parseStrptime(array(
       'tm_sec' => 0,
       'tm_min' => 0,
       'tm_hour' => 19,

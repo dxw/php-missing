@@ -3,7 +3,7 @@
 namespace Missing;
 
 class Dates {
-  static function parse_strptime($a) {
+  static function parseStrptime($a) {
     // Reset the timezone after using mktime
     $tz = date_default_timezone_get();
     date_default_timezone_set('UTC');
@@ -24,7 +24,7 @@ class Dates {
     foreach ($formats as $format) {
       $time = strptime($str, $format);
       if ($time !== false) {
-        return [self::parse_strptime($time), null];
+        return [self::parseStrptime($time), null];
       }
     }
 

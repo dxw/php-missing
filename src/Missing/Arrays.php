@@ -9,7 +9,7 @@ class Arrays {
     return $return;
   }
 
-  static function sort_by($array, $callback) {
+  static function sortBy($array, $callback) {
     if (!is_callable($callback) || !is_array($array)) {
       trigger_error('Arguments are in the wrong order', E_USER_ERROR);
     } //@codeCoverageIgnore
