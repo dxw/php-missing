@@ -21,14 +21,14 @@ Or, create a composer.json file with the following contents and run "composer in
 ## API
 
 * [\Missing\Arrays::flatten](#arr_flatten)
-* [\Missing\Arrays::sort_by](#arr_sort_by)
+* [\Missing\Arrays::sortBy](#arr_sort_by)
 * [\Missing\Dates::parse](#date_parse)
 * [\Missing\Dates::strftime](#date_strftime)
 * [\Missing\Ints::ordinalize](#int_ordinalize)
 * [\Missing\Reflection::call](#reflection_call)
-* [\Missing\Strings::starts_with](#string_starts_with)
-* [\Missing\Strings::ends_with](#string_ends_with)
-* [\Missing\Strings::get_output](#string_get_output)
+* [\Missing\Strings::startsWith](#string_starts_with)
+* [\Missing\Strings::endsWith](#string_ends_with)
+* [\Missing\Strings::getOutput](#string_get_output)
 
 ### Arrays
 
@@ -40,11 +40,11 @@ Flattens an array containing arrays.
     \Missing\Arrays::flatten([1, [2, 3, [4, 5]]]) === [1, 2, 3, 4, 5]
 
 <a name="arr_sort_by"></a>
-#### $array = \Missing\Arrays::sort_by($array, $callback)
+#### $array = \Missing\Arrays::sortBy($array, $callback)
 
 Sorts $array by $callback($array_element).
 
-    \Missing\Arrays::sort_by(['abc', 'ab', 'a'], function ($a) {return strlen($a);}) === ['a', 'ab', 'abc']
+    \Missing\Arrays::sortBy(['abc', 'ab', 'a'], function ($a) {return strlen($a);}) === ['a', 'ab', 'abc']
 
 ### Dates
 
@@ -94,17 +94,17 @@ Calls private or protected method $methodName of $object with $arguments (an arr
 ### Strings
 
 <a name="string_starts_with"></a>
-#### $bool = \Missing\Strings::starts_with($haystack, $needle)
+#### $bool = \Missing\Strings::startsWith($haystack, $needle)
 
 Returns true if string $haystack starts with $needle (uses substr() - regexes not supported).
 
 <a name="string_ends_with"></a>
-#### $bool = \Missing\Strings::ends_with($haystack, $needle)
+#### $bool = \Missing\Strings::endsWith($haystack, $needle)
 
 Returns true if string $haystack ends with $needle (uses substr() - regexes not supported).
 
 <a name="string_get_output"></a>
-#### $string = \Missing\Strings::get_output($callback)
+#### $string = \Missing\Strings::getOutput($callback)
 
 Executes $callback, returns what it prints as a string.
 

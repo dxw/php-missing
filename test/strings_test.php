@@ -2,19 +2,19 @@
 
 class StringsTest extends PHPUnit_Framework_TestCase {
   function testStartsWith() {
-    $this->assertTrue(Missing\Strings::starts_with('abc', 'a'));
-    $this->assertFalse(Missing\Strings::starts_with('abc', 'b'));
-    $this->assertFalse(Missing\Strings::starts_with('a', 'abc'));
+    $this->assertTrue(Missing\Strings::startsWith('abc', 'a'));
+    $this->assertFalse(Missing\Strings::startsWith('abc', 'b'));
+    $this->assertFalse(Missing\Strings::startsWith('a', 'abc'));
   }
 
   function testEndsWith() {
-    $this->assertTrue(Missing\Strings::ends_with('abc', 'c'));
-    $this->assertFalse(Missing\Strings::ends_with('abc', 'b'));
-    $this->assertFalse(Missing\Strings::ends_with('c', 'abc'));
+    $this->assertTrue(Missing\Strings::endsWith('abc', 'c'));
+    $this->assertFalse(Missing\Strings::endsWith('abc', 'b'));
+    $this->assertFalse(Missing\Strings::endsWith('c', 'abc'));
   }
 
   function testGetOutput() {
-    $this->assertEquals('a simple test', Missing\Strings::get_output(function () {
+    $this->assertEquals('a simple test', Missing\Strings::getOutput(function () {
       echo 'a simple test';
     }));
   }
