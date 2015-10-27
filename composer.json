@@ -13,8 +13,11 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "Missing": "src/"
+        "psr-4": {
+            "Missing\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8.*"
     }
 }
