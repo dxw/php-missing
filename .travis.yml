@@ -1,7 +1,11 @@
 language: php
 sudo: false
-install: composer install
-script: vendor/bin/phpunit
+install:
+  - composer global require fabpot/php-cs-fixer
+  - composer install
+script:
+  - vendor/bin/phpunit
+  - ~/.composer/vendor/bin/php-cs-fixer fix --dry-run -v --diff src
 php:
   - 5.4
   - 5.5
