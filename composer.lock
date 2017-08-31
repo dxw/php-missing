@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48818ebfb0713035a4f2f552c1888bfa",
-    "packages": [],
+    "content-hash": "ac7b855c430cf8dc1ac79c56fb63edaf",
+    "packages": [
+        {
+            "name": "dxw/result",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dxw/result.git",
+                "reference": "5b9d3988c215dc95e17cd082a33bc2c02b6007ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dxw/result/zipball/5b9d3988c215dc95e17cd082a33bc2c02b6007ca",
+                "reference": "5b9d3988c215dc95e17cd082a33bc2c02b6007ca",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "peridot-php/leo": "^1.6",
+                "peridot-php/peridot": "^1.19",
+                "peridot-php/peridot-dot-reporter": "^1.0",
+                "vimeo/psalm": "^3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dxw\\Result\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mallory Adams",
+                    "email": "mallory@dxw.com",
+                    "homepage": "https://www.dxw.com/"
+                }
+            ],
+            "description": "Result values",
+            "homepage": "https://github.com/dxw/result",
+            "time": "2020-06-12T16:01:47+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "amphp/amp",
