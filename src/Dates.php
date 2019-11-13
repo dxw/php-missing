@@ -4,7 +4,7 @@ namespace Missing;
 
 class Dates
 {
-    public static function parseStrptime($a)
+    public static function parseStrptime(array $a) : int
     {
         // Reset the timezone after using mktime
         $tz = date_default_timezone_get();
@@ -15,7 +15,7 @@ class Dates
         return $r;
     }
 
-    public static function parse($str)
+    public static function parse(string $str) : array
     {
         $formats = [
             '%Y-%m-%dT%H:%M:%S',
@@ -35,7 +35,13 @@ class Dates
         return [null, true];
     }
 
-    public static function strftime($datetime, $format, $else, $tz)
+
+    /**
+    * @param int|string $datetime
+    * @param mixed $else
+    * @return mixed
+    */
+    public static function strftime($datetime, string $format, $else, string $tz)
     {
         // Allow timestamps
         if (is_int($datetime)) {
