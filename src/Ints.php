@@ -6,10 +6,10 @@ class Ints
 {
     // Ported directly from active_support's Inflector#ordinal
     // https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb#L289
-    public static function ordinal($number)
+    public static function ordinal(int $number) : string
     {
         # abs_number = number.to_i.abs
-        $abs_number = abs((int) $number);
+        $abs_number = abs($number);
 
         # if (11..13).include?(abs_number % 100)
         if (in_array($abs_number, [11, 12, 13])) {
@@ -35,7 +35,7 @@ class Ints
 
     // Ported directly from active_support's Inflector#ordinalize
     // https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb#L313
-    public static function ordinalize($number)
+    public static function ordinalize(int $number) : string
     {
         # "#{number}#{ordinal(number)}"
         $ord = self::ordinal($number);
