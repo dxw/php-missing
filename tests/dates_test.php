@@ -1,10 +1,10 @@
 <?php
 
-class DatesTest extends PHPUnit_Framework_TestCase
+class DatesTest extends \PHPUnit\Framework\TestCase
 {
     public function testParseStrptime()
     {
-        $this->assertEquals(1339009200, Missing\Dates::parseStrptime(array(
+        $this->assertEquals(1339009200, Missing\Dates::parseStrptime([
             'tm_sec' => 0,
             'tm_min' => 0,
             'tm_hour' => 19,
@@ -14,7 +14,7 @@ class DatesTest extends PHPUnit_Framework_TestCase
             'tm_wday' => 5,
             'tm_yday' => 187,
             'unparsed' => null,
-        )));
+        ]));
     }
 
     public function testParse()

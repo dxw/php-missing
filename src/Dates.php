@@ -17,13 +17,13 @@ class Dates
 
     public static function parse($str)
     {
-        $formats = array(
+        $formats = [
             '%Y-%m-%dT%H:%M:%S',
             '%Y-%m-%d %H:%M:%S',
             '%Y-%m-%dT%H:%M',
             '%Y-%m-%d %H:%M',
             '%Y-%m-%d',
-        );
+        ];
 
         foreach ($formats as $format) {
             $time = strptime($str, $format);

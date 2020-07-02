@@ -6,9 +6,9 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Tom Adams",
-            "email": "tom@dxw.com",
-            "homepage": "http://dxw.com"
+            "name": "Mallory Adams",
+            "email": "mallory@dxw.com",
+            "homepage": "https://www.dxw.com/"
         }
     ],
     "autoload": {
@@ -17,6 +17,10 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "4.8.*"
+        "phpunit/phpunit": "^8.5",
+        "dxw/php-cs-fixer-config": "^1.0"
+    },
+    "require": {
+        "php": "^7.2"
     }
 }

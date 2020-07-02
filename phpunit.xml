@@ -1,6 +1,6 @@
 <phpunit backupGlobals="false" colors="true">
   <testsuites>
-    <testsuite>
+    <testsuite name="tests">
       <directory suffix="_test.php">tests</directory>
     </testsuite>
   </testsuites>
