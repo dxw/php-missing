@@ -23,7 +23,7 @@ class ReflectionTester
     }
 }
 
-class ReflectionTest extends PHPUnit_Framework_TestCase
+class ReflectionTest extends \PHPUnit\Framework\TestCase
 {
     public function testCall()
     {

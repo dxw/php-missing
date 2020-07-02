@@ -1,6 +1,6 @@
 <?php
 
-class IntsTest extends PHPUnit_Framework_TestCase
+class IntsTest extends \PHPUnit\Framework\TestCase
 {
     public function testOrdinalize()
     {

@@ -1,6 +1,6 @@
 <?php
 
-class ArraysTest extends PHPUnit_Framework_TestCase
+class ArraysTest extends \PHPUnit\Framework\TestCase
 {
     public function testFlatten()
     {
@@ -49,7 +49,7 @@ class ArraysTest extends PHPUnit_Framework_TestCase
 
     public function testSortByTriggersError()
     {
-        $this->setExpectedException('PHPUnit_Framework_Error');
+        $this->expectException(\PHPUnit\Framework\Error\Error::class);
         Missing\Arrays::sortBy(function () {}, array());
     }
 }
