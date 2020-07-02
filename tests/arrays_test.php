@@ -55,7 +55,7 @@ class ArraysTest extends \PHPUnit\Framework\TestCase
 
     public function testSortByTriggersError()
     {
-        $this->expectException(\PHPUnit\Framework\Error\Error::class);
+        $this->expectException(\TypeError::class);
         Missing\Arrays::sortBy(function () {
         }, []);
     }
