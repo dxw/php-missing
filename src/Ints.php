@@ -15,7 +15,7 @@ class Ints
         if (in_array($abs_number, [11, 12, 13])) {
             # "th"
             return 'th';
-            # else
+        # else
         } else {
             # case abs_number % 10
             switch ($abs_number % 10) {
