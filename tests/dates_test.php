@@ -1,6 +1,6 @@
 <?php
 
-class DatesTest extends PHPUnit_Framework_TestCase
+class DatesTest extends \PHPUnit\Framework\TestCase
 {
     public function testParseStrptime()
     {

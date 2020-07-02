@@ -1,6 +1,6 @@
 <?php
 
-class StringsTest extends PHPUnit_Framework_TestCase
+class StringsTest extends \PHPUnit\Framework\TestCase
 {
     public function testStartsWith()
     {
