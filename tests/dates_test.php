@@ -20,42 +20,42 @@ class DatesTest extends \PHPUnit\Framework\TestCase
     public function testParse()
     {
         // Without seconds
-        list($date, $err) = Missing\Dates::parse('2012-06-06T19:00');
-        $this->assertNull($err);
-        $this->assertEquals(1339009200, $date);
+        $result = Missing\Dates::parse('2012-06-06T19:00');
+        $this->assertFalse($result->isErr());
+        $this->assertEquals(1339009200, $result->unwrap());
 
-        list($date, $err) = Missing\Dates::parse('2012-06-06 19:00');
-        $this->assertNull($err);
-        $this->assertEquals(1339009200, $date);
+        $result = Missing\Dates::parse('2012-06-06 19:00');
+        $this->assertFalse($result->isErr());
+        $this->assertEquals(1339009200, $result->unwrap());
 
         // With seconds
-        list($date, $err) = Missing\Dates::parse('2012-06-06T19:00:13');
-        $this->assertNull($err);
-        $this->assertEquals(1339009213, $date);
+        $result = Missing\Dates::parse('2012-06-06T19:00:13');
+        $this->assertFalse($result->isErr());
+        $this->assertEquals(1339009213, $result->unwrap());
 
-        list($date, $err) = Missing\Dates::parse('2012-06-06 19:00:13');
-        $this->assertNull($err);
-        $this->assertEquals(1339009213, $date);
+        $result = Missing\Dates::parse('2012-06-06 19:00:13');
+        $this->assertFalse($result->isErr());
+        $this->assertEquals(1339009213, $result->unwrap());
 
-        list($date, $err) = Missing\Dates::parse('2011-12-13');
-        $this->assertNull($err);
-        $this->assertEquals('2011-12-13', strftime('%Y-%m-%d', $date));
+        $result = Missing\Dates::parse('2011-12-13');
+        $this->assertFalse($result->isErr());
+        $this->assertEquals('2011-12-13', strftime('%Y-%m-%d', $result->unwrap()));
 
-        list($date, $err) = Missing\Dates::parse('2011-12-13');
-        $this->assertNull($err);
-        $this->assertEquals(mktime(0, 0, 0, 12, 13, 2011), $date);
+        $result = Missing\Dates::parse('2011-12-13');
+        $this->assertFalse($result->isErr());
+        $this->assertEquals(mktime(0, 0, 0, 12, 13, 2011), $result->unwrap());
     }
 
     public function testParseFailureA()
     {
-        list($date, $err) = Missing\Dates::parse('2012-06-006 19:00');
-        $this->assertTrue($err);
+        $result = Missing\Dates::parse('2012-06-006 19:00');
+        $this->assertTrue($result->isErr());
     }
 
     public function testParseFailureB()
     {
-        list($date, $err) = Missing\Dates::parse("this doesn't even look like a date!");
-        $this->assertTrue($err);
+        $result = Missing\Dates::parse("this doesn't even look like a date!");
+        $this->assertTrue($result->isErr());
     }
 
     public function testResettingTimeZone()
@@ -86,9 +86,8 @@ class DatesTest extends \PHPUnit\Framework\TestCase
     public function testTimestamp()
     {
         // It doesn't make sense to parse a timestamp
-        list($date, $err) = Missing\Dates::parse(1339009200);
-        $this->assertTrue($err);
-        $this->assertNull($date);
+        $result = Missing\Dates::parse(1339009200);
+        $this->assertTrue($result->isErr());
 
         // But it does make sense to strftime() a timestamp
         $this->assertEquals(

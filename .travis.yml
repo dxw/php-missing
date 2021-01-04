@@ -17,3 +17,4 @@ install:
 script:
   - vendor/bin/phpunit
   - vendor/bin/php-cs-fixer fix --dry-run -v --diff
+  - vendor/bin/psalm

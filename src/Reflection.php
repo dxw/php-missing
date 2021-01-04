@@ -4,7 +4,11 @@ namespace Missing;
 
 class Reflection
 {
-    public static function call($obj, $methodName, $args = [])
+    /**
+    * @param object $obj
+    * @return mixed
+    */
+    public static function call($obj, string $methodName, array $args = [])
     {
         $ref = new \ReflectionObject($obj);
 

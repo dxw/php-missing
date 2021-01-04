@@ -4,7 +4,7 @@ namespace Missing;
 
 class Dates
 {
-    public static function parseStrptime($a)
+    public static function parseStrptime(array $a) : int
     {
         // Reset the timezone after using mktime
         $tz = date_default_timezone_get();
@@ -15,7 +15,7 @@ class Dates
         return $r;
     }
 
-    public static function parse($str)
+    public static function parse(string $str) : \Dxw\Result\Result
     {
         $formats = [
             '%Y-%m-%dT%H:%M:%S',
@@ -28,23 +28,30 @@ class Dates
         foreach ($formats as $format) {
             $time = strptime($str, $format);
             if ($time !== false) {
-                return [self::parseStrptime($time), null];
+                return \Dxw\Result\Result::ok(self::parseStrptime($time));
             }
         }
 
-        return [null, true];
+        return \Dxw\Result\Result::err('date string did not match any known format');
     }
 
-    public static function strftime($datetime, $format, $else, $tz)
+
+    /**
+    * @param int|string $datetime
+    * @param mixed $else
+    * @return mixed
+    */
+    public static function strftime($datetime, string $format, $else, string $tz)
     {
         // Allow timestamps
         if (is_int($datetime)) {
             $t = $datetime;
         } else {
-            list($t, $err) = self::parse($datetime);
-            if ($err) {
+            $result = self::parse($datetime);
+            if ($result->isErr()) {
                 return $else;
             }
+            $t = $result->unwrap();
         }
 
         $old_tz = date_default_timezone_get();
