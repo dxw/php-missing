@@ -51,13 +51,13 @@ Sorts $array by $callback($array_element).
 <a name="date_parse"></a>
 #### list($timestamp, $err) = \Missing\Dates::parse($str)
 
-Parses several common/standard time formats, returns UNIX timestamp and error (true/null).
+Parses several common/standard time formats, returns a `Dxw\Result\Result` object containing either the UNIX timestamp or an error.
 
-    list($d, $err) = \Missing\Dates::parse(get_post_meta($post->ID, '_EventStartDate', true));
-    if ($err) {
+    $result = \Missing\Dates::parse(get_post_meta($post->ID, '_EventStartDate', true));
+    if ($result->isErr()) {
       $date = 'Unknown date';
     } else {
-      $date = strftime('%e %B %Y', $d);
+      $date = strftime('%e %B %Y', $result->unwrap());
     }
 
 The following date formats are parsed:
