@@ -3,7 +3,7 @@ on:
   push:
 
 jobs:
-  lint:
+  lint-and-test:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
