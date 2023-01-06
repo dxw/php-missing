@@ -23,13 +23,13 @@ class IntsTest extends \PHPUnit\Framework\TestCase
 
     public function testMonthNameLessThanThrowsException()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(\UnexpectedValueException::class);
         Missing\Ints::monthName(0);
     }
 
     public function testMonthNameGreaterThanThrowsException()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(\UnexpectedValueException::class);
         Missing\Ints::monthName(13);
     }
 }
