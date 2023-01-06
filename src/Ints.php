@@ -2,6 +2,8 @@
 
 namespace Missing;
 
+use UnexpectedValueException;
+
 class Ints
 {
     // Ported directly from active_support's Inflector#ordinal
@@ -41,5 +43,14 @@ class Ints
         $ord = self::ordinal($number);
 
         return "{$number}{$ord}";
+    }
+
+    public static function monthName(int $monthNumber) : string
+    {
+        if ($monthNumber < 1 || $monthNumber > 12) {
+            throw new UnexpectedValueException("Invalid month number: the value must be between 1 and 12.");
+        }
+
+        return date("F", mktime(0, 0, 0, $monthNumber));
     }
 }
