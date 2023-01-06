@@ -14,7 +14,7 @@ class IntsTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(Missing\Ints::ordinalize(77), '77th');
     }
 
-   public function testMonthName()
+    public function testMonthName()
     {
         $this->assertEquals(Missing\Ints::monthName(1), 'January');
         $this->assertEquals(Missing\Ints::monthName(2), 'February');
@@ -23,14 +23,13 @@ class IntsTest extends \PHPUnit\Framework\TestCase
 
     public function testMonthNameLessThanThrowsException()
     {
-       $this->expectException(\Exception::class);
-       Missing\Ints::monthName(0);
+        $this->expectException(\Exception::class);
+        Missing\Ints::monthName(0);
     }
 
     public function testMonthNameGreaterThanThrowsException()
     {
-       $this->expectException(\Exception::class);
-       Missing\Ints::monthName(13);
+        $this->expectException(\Exception::class);
+        Missing\Ints::monthName(13);
     }
-
 }
