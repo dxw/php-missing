@@ -40,11 +40,7 @@ class Ints
     public static function ordinalize(int $number) : string
     {
         # "#{number}#{ordinal(number)}"
-<<<<<<< Updated upstream
         $ord = self::ordinal($number);
-=======
-        $ord= self::ordinal($number);
->>>>>>> Stashed changes
 
         return "{$number}{$ord}";
     }
