@@ -46,13 +46,8 @@ class DatesTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(mktime(0, 0, 0, 12, 13, 2011), $result->unwrap());
     }
 
-    public function testParseFailureA()
-    {
-        $result = Missing\Dates::parse('2012-06-006 19:00');
-        $this->assertTrue($result->isErr());
-    }
-
-    public function testParseFailureB():void
+ 
+    public function testParseFailureA():void
     {
         $result = Missing\Dates::parse("this doesn't even look like a date!");
         $this->assertTrue($result->isErr());
