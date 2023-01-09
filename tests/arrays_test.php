@@ -2,7 +2,7 @@
 
 class ArraysTest extends \PHPUnit\Framework\TestCase
 {
-    public function testFlatten()
+    public function testFlatten():void
     {
         $this->assertEquals(
             ['a', 'b', 'c', 'd'],
@@ -14,7 +14,7 @@ class ArraysTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testSortByInt()
+    public function testSortByInt():void
     {
         $this->assertEquals(
             ['a', 'a', 'ab', 'abc', 'abcd'],
@@ -27,7 +27,7 @@ class ArraysTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testSortByString()
+    public function testSortByString():void
     {
         $this->assertEquals(
             ['a333', 'b22', 'c1', 'd55555'],
@@ -40,7 +40,7 @@ class ArraysTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testSortByArray()
+    public function testSortByArray():void
     {
         $this->assertEquals(
             [[2, 'b'], [2, 'c'], [19, 'a']],
@@ -53,10 +53,10 @@ class ArraysTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testSortByTriggersError()
+    public function testSortByTriggersError():void
     {
         $this->expectException(\TypeError::class);
-        Missing\Arrays::sortBy(function () {
+        Missing\Arrays::sortBy(function () :void {
         }, []);
     }
 }

@@ -2,22 +2,22 @@
 
 class ReflectionTester
 {
-    private function returnTruePrivate()
+    private function returnTruePrivate():bool
     {
         return true;
     }
 
-    public function returnTruePublic()
+    public function returnTruePublic():bool
     {
         return true;
     }
 
-    private function returnArgPrivate($a)
+    private function returnArgPrivate(int $a):int
     {
         return $a;
     }
 
-    public function returnArgPublic($a)
+    public function returnArgPublic(int $a):int
     {
         return $a;
     }
@@ -25,7 +25,7 @@ class ReflectionTester
 
 class ReflectionTest extends \PHPUnit\Framework\TestCase
 {
-    public function testCall()
+    public function testCall():void
     {
         $t = new ReflectionTester();
         $this->assertEquals(\Missing\Reflection::call($t, 'returnTruePublic'), true);

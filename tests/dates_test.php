@@ -2,7 +2,7 @@
 
 class DatesTest extends \PHPUnit\Framework\TestCase
 {
-    public function testParseStrptime()
+    public function testParseStrptime():void
     {
         $this->assertEquals(1339009200, Missing\Dates::parseStrptime([
             'tm_sec' => 0,
@@ -17,7 +17,7 @@ class DatesTest extends \PHPUnit\Framework\TestCase
         ]));
     }
 
-    public function testParse()
+    public function testParse():void
     {
         // Without seconds
         $result = Missing\Dates::parse('2012-06-06T19:00');
@@ -52,13 +52,13 @@ class DatesTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue($result->isErr());
     }
 
-    public function testParseFailureB()
+    public function testParseFailureB():void
     {
         $result = Missing\Dates::parse("this doesn't even look like a date!");
         $this->assertTrue($result->isErr());
     }
 
-    public function testResettingTimeZone()
+    public function testResettingTimeZone():void
     {
         date_default_timezone_set('America/New_York');
         Missing\Dates::parse('2011-12-13');
@@ -67,7 +67,7 @@ class DatesTest extends \PHPUnit\Framework\TestCase
         date_default_timezone_set('UTC');
     }
 
-    public function testStrftime()
+    public function testStrftime():void
     {
         $this->assertEquals(
             \Missing\Dates::strftime('2014-01-01 00:00', '%H:%M', 'unknown', 'Europe/London'),
@@ -83,7 +83,7 @@ class DatesTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testTimestamp()
+    public function testTimestamp():void
     {
         $this->assertEquals(
             '2012-06-06T20:00',
