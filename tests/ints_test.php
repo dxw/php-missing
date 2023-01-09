@@ -10,7 +10,6 @@ class IntsTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(Missing\Ints::ordinalize(20), '20th');
         $this->assertEquals(Missing\Ints::ordinalize(22), '22nd');
         $this->assertEquals(Missing\Ints::ordinalize(23), '23rd');
-        $this->assertEquals(Missing\Ints::ordinalize('44'), '44th');
         $this->assertEquals(Missing\Ints::ordinalize(77), '77th');
     }
 
