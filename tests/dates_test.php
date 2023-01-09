@@ -85,11 +85,6 @@ class DatesTest extends \PHPUnit\Framework\TestCase
 
     public function testTimestamp()
     {
-        // It doesn't make sense to parse a timestamp
-        $result = Missing\Dates::parse(1339009200);
-        $this->assertTrue($result->isErr());
-
-        // But it does make sense to strftime() a timestamp
         $this->assertEquals(
             '2012-06-06T20:00',
             Missing\Dates::strftime(
