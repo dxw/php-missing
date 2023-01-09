@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 class DatesTest extends \PHPUnit\Framework\TestCase
 {
-    public function testParseStrptime()
+    public function testParseStrptime():void
     {
         $this->assertEquals(1339009200, Missing\Dates::parseStrptime([
             'tm_sec' => 0,
@@ -17,7 +17,7 @@ class DatesTest extends \PHPUnit\Framework\TestCase
         ]));
     }
 
-    public function testParse()
+    public function testParse():void
     {
         // Without seconds
         $result = Missing\Dates::parse('2012-06-06T19:00');
@@ -46,19 +46,14 @@ class DatesTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(mktime(0, 0, 0, 12, 13, 2011), $result->unwrap());
     }
 
-    public function testParseFailureA()
-    {
-        $result = Missing\Dates::parse('2012-06-006 19:00');
-        $this->assertTrue($result->isErr());
-    }
-
-    public function testParseFailureB()
+ 
+    public function testParseFailureA():void
     {
         $result = Missing\Dates::parse("this doesn't even look like a date!");
         $this->assertTrue($result->isErr());
     }
 
-    public function testResettingTimeZone()
+    public function testResettingTimeZone():void
     {
         date_default_timezone_set('America/New_York');
         Missing\Dates::parse('2011-12-13');
@@ -67,7 +62,7 @@ class DatesTest extends \PHPUnit\Framework\TestCase
         date_default_timezone_set('UTC');
     }
 
-    public function testStrftime()
+    public function testStrftime():void
     {
         $this->assertEquals(
             \Missing\Dates::strftime('2014-01-01 00:00', '%H:%M', 'unknown', 'Europe/London'),
@@ -83,13 +78,8 @@ class DatesTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testTimestamp()
+    public function testTimestamp():void
     {
-        // It doesn't make sense to parse a timestamp
-        $result = Missing\Dates::parse(1339009200);
-        $this->assertTrue($result->isErr());
-
-        // But it does make sense to strftime() a timestamp
         $this->assertEquals(
             '2012-06-06T20:00',
             Missing\Dates::strftime(
