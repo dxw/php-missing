@@ -73,7 +73,7 @@ The following date formats are parsed:
 
 Parses $date_string using \Missing\Dates::parse() (also accepts a UTC timestamp), if it parses correctly, return the date formatted with $format in the timezone $tz, otherwise return $else.
 
-    <p>Date: <?php echo \Missing\Dates::strftime($date, '%d/%m/%Y', 'unknown', 'Europe/London') ?></p>
+    <p>Date: <?php echo \Missing\Dates::strftime($date, 'd/m/Y', 'unknown', 'Europe/London') ?></p>
 
 ### Ints
 
