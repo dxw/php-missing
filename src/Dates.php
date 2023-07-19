@@ -2,6 +2,8 @@
 
 namespace Missing;
 
+use DateTime;
+
 class Dates
 {
     public static function parseStrptime(array $a) : int
@@ -9,7 +11,7 @@ class Dates
         // Reset the timezone after using mktime
         $tz = date_default_timezone_get();
         date_default_timezone_set('UTC');
-        $r = mktime($a['tm_hour'], $a['tm_min'], $a['tm_sec'], $a['tm_mon'] + 1, $a['tm_mday'], $a['tm_year'] + 1900);
+        $r = mktime($a['hour'], $a['minute'], $a['second'], $a['month'], $a['day'], $a['year']);
         date_default_timezone_set($tz);
 
         return $r;
@@ -18,16 +20,16 @@ class Dates
     public static function parse(string $str) : \Dxw\Result\Result
     {
         $formats = [
-            '%Y-%m-%dT%H:%M:%S',
-            '%Y-%m-%d %H:%M:%S',
-            '%Y-%m-%dT%H:%M',
-            '%Y-%m-%d %H:%M',
-            '%Y-%m-%d',
+            'Y-m-d\TH:i:s',
+            'Y-m-d H:i:s',
+            'Y-m-d\TH:i',
+            'Y-m-d H:i',
+            'Y-m-d',
         ];
 
         foreach ($formats as $format) {
-            $time = strptime($str, $format);
-            if ($time !== false) {
+            $time = date_parse_from_format($format, $str);
+            if ($time['error_count'] == 0) {
                 return \Dxw\Result\Result::ok(self::parseStrptime($time));
             }
         }
@@ -57,7 +59,7 @@ class Dates
         $old_tz = date_default_timezone_get();
         date_default_timezone_set($tz);
 
-        $ret = strftime($format, $t);
+        $ret = date($format, $t);
 
         date_default_timezone_set($old_tz);
 

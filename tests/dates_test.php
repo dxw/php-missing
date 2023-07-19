@@ -5,12 +5,12 @@ class DatesTest extends \PHPUnit\Framework\TestCase
     public function testParseStrptime()
     {
         $this->assertEquals(1339009200, Missing\Dates::parseStrptime([
-            'tm_sec' => 0,
-            'tm_min' => 0,
-            'tm_hour' => 19,
-            'tm_mday' => 6,
-            'tm_mon' => 5,
-            'tm_year' => 112,
+            'second' => 0,
+            'minute' => 0,
+            'hour' => 19,
+            'day' => 6,
+            'month' => 6,
+            'year' => 2012,
             'tm_wday' => 5,
             'tm_yday' => 187,
             'unparsed' => null,
@@ -70,15 +70,15 @@ class DatesTest extends \PHPUnit\Framework\TestCase
     public function testStrftime()
     {
         $this->assertEquals(
-            \Missing\Dates::strftime('2014-01-01 00:00', '%H:%M', 'unknown', 'Europe/London'),
+            \Missing\Dates::strftime('2014-01-01 00:00', 'H:i', 'unknown', 'Europe/London'),
             '00:00'
         );
         $this->assertEquals(
-            \Missing\Dates::strftime('2014-06-01 00:00', '%H:%M', 'unknown', 'Europe/London'),
+            \Missing\Dates::strftime('2014-06-01 00:00', 'H:i', 'unknown', 'Europe/London'),
             '01:00'
         );
         $this->assertEquals(
-            \Missing\Dates::strftime('cats', '%H:%M', 1234, 'Europe/London'),
+            \Missing\Dates::strftime('cats', 'H:i', 1234, 'Europe/London'),
             1234
         );
     }
@@ -94,7 +94,7 @@ class DatesTest extends \PHPUnit\Framework\TestCase
             '2012-06-06T20:00',
             Missing\Dates::strftime(
                 1339009200,
-                '%Y-%m-%dT%H:%M',
+                'Y-m-d\TH:i',
                 'unknown',
                 'Europe/London'
             )
