@@ -8,13 +8,13 @@ Install [composer](http://getcomposer.org/).
 
 Run the following in the root of your project:
 
-    composer require dxw/php-missing dev-main
+    composer require dxw/php-missing
 
 Or, create a composer.json file with the following contents and run "composer install":
 
     {
       "require": {
-        "dxw/php-missing": "dev-main"
+        "dxw/php-missing": "^2.0"
       }
     }
 
