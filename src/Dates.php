@@ -55,8 +55,12 @@ class Dates
 			}
 			$t = $result->unwrap();
 		}
-
 		$old_tz = date_default_timezone_get();
+
+		/** @psalm-suppress ArgumentTypeCoercion
+		 *
+		 * See: https://github.com/vimeo/psalm/issues/11144
+		 */
 		date_default_timezone_set($tz);
 
 		$ret = date($format, $t);
