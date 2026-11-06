@@ -39,7 +39,7 @@ class DatesTest extends \PHPUnit\Framework\TestCase
 
 		$result = Missing\Dates::parse('2011-12-13');
 		$this->assertFalse($result->isErr());
-		$this->assertEquals('2011-12-13', strftime('%Y-%m-%d', $result->unwrap()));
+		$this->assertEquals('2011-12-13', date('Y-m-d', $result->unwrap()));
 
 		$result = Missing\Dates::parse('2011-12-13');
 		$this->assertFalse($result->isErr());
