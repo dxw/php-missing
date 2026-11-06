@@ -2,6 +2,9 @@
 
 namespace Missing;
 
+/**
+ * @api
+ */
 class Strings
 {
 	public static function startsWith(string $haystack, string $needle): bool

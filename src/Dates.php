@@ -4,6 +4,9 @@ namespace Missing;
 
 use DateTime;
 
+/**
+ * @api
+ */
 class Dates
 {
 	public static function parseStrptime(array $a): int
