@@ -17,7 +17,7 @@ class Strings
 		return substr($haystack, -strlen($needle)) === $needle;
 	}
 
-	public static function getOutput(callable $callback): string
+	public static function getOutput(callable $callback): string|false
 	{
 		ob_start();
 		call_user_func($callback);
