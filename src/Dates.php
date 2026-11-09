@@ -4,9 +4,12 @@ namespace Missing;
 
 use DateTime;
 
+/**
+ * @api
+ */
 class Dates
 {
-	public static function parseStrptime(array $a): int
+	public static function parseStrptime(array $a): int|false
 	{
 		// Reset the timezone after using mktime
 		$tz = date_default_timezone_get();

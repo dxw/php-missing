@@ -4,6 +4,9 @@ namespace Missing;
 
 use UnexpectedValueException;
 
+/**
+ * @api
+ */
 class Ints
 {
 	// Ported directly from active_support's Inflector#ordinal

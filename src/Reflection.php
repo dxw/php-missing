@@ -2,6 +2,9 @@
 
 namespace Missing;
 
+/**
+ * @api
+ */
 class Reflection
 {
 	/**

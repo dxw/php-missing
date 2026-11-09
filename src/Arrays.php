@@ -2,6 +2,9 @@
 
 namespace Missing;
 
+/**
+ * @api
+ */
 class Arrays
 {
 	public static function flatten(array $array): array
